@@ -5,13 +5,13 @@
 public class Main {
     public static void main(String[] args) {
         // Tree 1: a, b, c, d, e
-        BinaryTreeNode<String> nodeD = new BinaryTreeNode<>("d", null, null);
-        BinaryTreeNode<String> nodeE = new BinaryTreeNode<>("e", null, null);
-        BinaryTreeNode<String> nodeB = new BinaryTreeNode<>("b", nodeD, nodeE);
-        BinaryTreeNode<String> nodeC = new BinaryTreeNode<>("c", null, null);
-        BinaryTreeNode<String> nodeA = new BinaryTreeNode<>("a", nodeB, nodeC);
+        BinaryTreeNode<Character> nodeD = new BinaryTreeNode<>('d', null, null);
+        BinaryTreeNode<Character> nodeE = new BinaryTreeNode<>('e', null, null);
+        BinaryTreeNode<Character> nodeB = new BinaryTreeNode<>('b', nodeD, nodeE);
+        BinaryTreeNode<Character> nodeC = new BinaryTreeNode<>('c', null, null);
+        BinaryTreeNode<Character> nodeA = new BinaryTreeNode<>('a', nodeB, nodeC);
 
-        BinaryTree<String> bt1 = new BinaryTree<>(5, nodeA);
+        BinaryTree<Character> bt1 = new BinaryTree<Character>(5, nodeA);
 
         // Tree 2: 3.4, -1.5, 2.9, -9.3
         BinaryTreeNode<Double> nodeNeg9_3 = new BinaryTreeNode<>(-9.3, null, null);
@@ -19,7 +19,7 @@ public class Main {
         BinaryTreeNode<Double> nodeNeg1_5 = new BinaryTreeNode<>(-1.5, nodeNeg9_3, null);
         BinaryTreeNode<Double> node3_4 = new BinaryTreeNode<>(3.4, nodeNeg1_5, node2_9);
 
-        BinaryTree<Double> bt2 = new BinaryTree<>(4, node3_4);
+        BinaryTree<Double> bt2 = new BinaryTree<Double>(4, node3_4);
 
         // Print level order traversal for both trees
         System.out.println("bt1 Level Order:");
