@@ -1,3 +1,7 @@
+//Miguel Wentzel
+//4478677
+//Practical 1 Term 2
+//Question 1
 class BinaryTreeNode<E> {
     // Private attributes for encapsulation
     private E value;
