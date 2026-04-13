@@ -4,49 +4,55 @@
 //Question 2
 public class Main {
     public static void main(String[] args) {
-        // Tree 1: a, b, c, d, e
-        BinaryTreeNode<Character> nodeD = new BinaryTreeNode<>('d', null, null);
-        BinaryTreeNode<Character> nodeE = new BinaryTreeNode<>('e', null, null);
-        BinaryTreeNode<Character> nodeB = new BinaryTreeNode<>('b', nodeD, nodeE);
-        BinaryTreeNode<Character> nodeC = new BinaryTreeNode<>('c', null, null);
-        BinaryTreeNode<Character> nodeA = new BinaryTreeNode<>('a', nodeB, nodeC);
 
-        BinaryTree<Character> bt1 = new BinaryTree<Character>(5, nodeA);
+        // =========================
+        // Tree 1: Characters
+        // Level order: a, b, c, d, e
+        // =========================
+        BinaryTree<Character> bt1 = new BinaryTree<>();
 
-        // Tree 2: 3.4, -1.5, 2.9, -9.3
-        BinaryTreeNode<Double> nodeNeg9_3 = new BinaryTreeNode<>(-9.3, null, null);
-        BinaryTreeNode<Double> node2_9 = new BinaryTreeNode<>(2.9, null, null);
-        BinaryTreeNode<Double> nodeNeg1_5 = new BinaryTreeNode<>(-1.5, nodeNeg9_3, null);
-        BinaryTreeNode<Double> node3_4 = new BinaryTreeNode<>(3.4, nodeNeg1_5, node2_9);
+        BinaryTreeNode<Character> a = new BinaryTreeNode<>('a');
+        BinaryTreeNode<Character> b = new BinaryTreeNode<>('b');
+        BinaryTreeNode<Character> c = new BinaryTreeNode<>('c');
+        BinaryTreeNode<Character> d = new BinaryTreeNode<>('d');
+        BinaryTreeNode<Character> e = new BinaryTreeNode<>('e');
 
-        BinaryTree<Double> bt2 = new BinaryTree<Double>(4, node3_4);
+        // Connect nodes
+        a.setLeft(b);
+        a.setRight(c);
+        b.setLeft(d);
+        b.setRight(e);
 
-        // Print level order traversal for both trees
-        System.out.println("bt1 Level Order:");
-        printLevelOrder(bt1.getRoot());
+        // Set root
+        bt1.setRoot(a);
+        bt1.setSize(5);
 
-        System.out.println("\nbt2 Level Order:");
-        printLevelOrder(bt2.getRoot());
-    }
 
-    // Helper method for level order traversal
-    public static <E> void printLevelOrder(BinaryTreeNode<E> root) {
-        if (root == null) return;
+        // =========================
+        // Tree 2: Doubles
+        // Level order: 3.4, -1.5, 2.9, -9.3
+        // =========================
+        BinaryTree<Double> bt2 = new BinaryTree<>();
 
-        java.util.Queue<BinaryTreeNode<E>> queue = new java.util.LinkedList<>();
-        queue.add(root);
+        BinaryTreeNode<Double> n1 = new BinaryTreeNode<>(3.4);
+        BinaryTreeNode<Double> n2 = new BinaryTreeNode<>(-1.5);
+        BinaryTreeNode<Double> n3 = new BinaryTreeNode<>(2.9);
+        BinaryTreeNode<Double> n4 = new BinaryTreeNode<>(-9.3);
 
-        while (!queue.isEmpty()) {
-            BinaryTreeNode<E> current = queue.poll();
-            System.out.print(current.getValue() + " ");
+        // Connect nodes
+        n1.setLeft(n2);
+        n1.setRight(n3);
+        n2.setLeft(n4);
+        // n2 right = null automatically
 
-            if (current.getLeft() != null) {
-                queue.add(current.getLeft());
-            }
-            if (current.getRight() != null) {
-                queue.add(current.getRight());
-            }
-        }
+        // Set root
+        bt2.setRoot(n1);
+        bt2.setSize(4);
+
+
+        // =========================
+        // TEST OUTPUT (Optional)
+        // =========================
+        System.out.println("Trees created successfully!");
     }
 }
-
