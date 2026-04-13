@@ -51,7 +51,7 @@ public class Main {
 
 
         // =========================
-        // TEST OUTPUT (Optional)
+        // TEST OUTPUT
         // =========================
         System.out.println("Trees created successfully!");
     }
